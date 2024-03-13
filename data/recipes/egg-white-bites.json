@@ -1,0 +1,16 @@
+{
+    "id": "dcf214b6-4c94-4adb-9d83-f3fafabfee2d",
+    "name": "Egg White Bites",
+    "ingredients": [
+        {
+            "id": "1a30fe4c-5cf7-42a5-aad8-2b0400243e0b",
+            "unit": "Count",
+            "number": 1
+        },
+        {
+            "id": "02d2b05c-6358-4751-b64f-9d8fa53d5eb4",
+            "unit": "Carton (sm)",
+            "number": 1
+        }
+    ]
+}
