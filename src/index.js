@@ -2,11 +2,11 @@ import React from 'react';
 import reportWebVitals from './reportWebVitals';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
-import Layout from './pages/Layout/Layout';
-import Home from './pages/Home/Home';
-import Recipe from './pages/Recipe/Recipe';
-import NewRecipe from './pages/NewRecipe/NewRecipe';
-import RecipeBook from './pages/RecipeBook/RecipeBook';
+import Layout from './components/Layout/Layout';
+import Home from './components/Home/Home';
+import Recipe from './components/Recipe/Recipe';
+import NewRecipe from './components/NewRecipe/NewRecipe';
+import RecipeBook from './components/RecipeBook/RecipeBook';
 
 export default function App() {
   return (
@@ -16,7 +16,7 @@ export default function App() {
           {<Route element={<Home />} />}
           {<Route path="/new-recipe" element={<NewRecipe />} />}
           {<Route path="/recipe-book" element={<RecipeBook />} />}
-          {<Route path="/recipe/:recipe" element={<Recipe />} />}
+          {<Route path="/recipe/:recipeID" element={<Recipe />} />}
           <Route path="/*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
