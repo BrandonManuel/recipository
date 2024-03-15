@@ -58,7 +58,7 @@ function Recipe() {
       <div className="steps">
         Steps:
         {steps.map((step) => {
-          return <Step step={step} />;
+          return <Step key={step.id} step={step} />;
         })}
       </div>
     </>

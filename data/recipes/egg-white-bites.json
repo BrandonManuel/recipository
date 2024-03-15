@@ -47,14 +47,33 @@
         }
     ],
     "steps": [
-        "Preheat oven to 350°, spray muffin tin with cooking spray.",
-        "Slice red pepper in half and raost in toaster oven (settings: bake ~400°).",
-        "Combine egg whites, cheese, salt, and pepper to aste in blender pulse until smooth.",
-        "Chop a handful of spinach up finely.",
-        "Dice roasted red pepper and combine in bowl with chopped spinach and a few grinds of salt and pepper.",
-        "Start boiling water.",
-        "Pour small amount of egg mix into bottom of each muffin cup. Distribute the spinach and pepper mix into muffin tin then top off all with remaining egg mixtures (cups should be basically full).",
-        "Set muffin tin on sheet pan and fill sheetpan with a kettle full of boiling water.",
-        "Cook ~30 minutes and allow to cool ~5 minutes in muffin tin before turning them out to cool on racks."
+        {
+            "id": "667db1df-e641-44f0-bfa1-a9a1e58e1bf9",
+            "text":"Preheat oven to 350°, spray muffin tin with cooking spray."
+        },
+        {
+            "id": "6fea55c8-893b-4d88-b286-c71bf75000fc",
+            "text":"Slice red pepper in half and raost in toaster oven (settings: bake ~400°)."},
+        {
+            "id": "f81c7951-7585-4894-9de0-e8b2c47d23b4",
+            "text":"Combine egg whites, cheese, salt, and pepper to aste in blender pulse until smooth."},
+        {
+            "id": "4ee141b5-5088-4138-8da7-c0c501833c4f",
+            "text":"Chop a handful of spinach up finely."},
+        {
+            "id": "52284786-9534-4dc3-aa74-74f4fafdbb8a",
+            "text":"Dice roasted red pepper and combine in bowl with chopped spinach and a few grinds of salt and pepper."},
+        {
+            "id": "d2082245-2d77-4761-ae69-48d291db7a59",
+            "text":"Start boiling water."},
+        {
+            "id": "88b4b36b-e424-4309-bad4-ecd5d1254cc4",
+            "text":"Pour small amount of egg mix into bottom of each muffin cup. Distribute the spinach and pepper mix into muffin tin then top off all with remaining egg mixtures (cups should be basically full)."},
+        {
+            "id": "6bc60e91-5235-436a-8e37-04651bad907a",
+            "text":"Set muffin tin on sheet pan and fill sheetpan with a kettle full of boiling water."},
+        {
+            "id": "359b7457-4d4a-4756-97d4-03ffb90e45ed",
+            "text":"Cook ~30 minutes and allow to cool ~5 minutes in muffin tin before turning them out to cool on racks."}
     ]
 }
