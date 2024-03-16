@@ -5,15 +5,13 @@ import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './Step.css';
 
-function Step({ step, recipeID, stepNum }) {
+function Step({ step, recipeID, stepNum, saveStep }) {
   const [isEditable, setIsEditable] = useState(false);
   const [stepText, setStepText] = useState(step.text);
 
-  function saveStep() {
-    var json = require(`../../../../backend/data/recipes/${recipeID}.json`);
-    json.steps[stepNum] = stepText;
-
-    console.log(json);
+  function saveStepEdit() {
+    saveStep(recipeID, stepNum, stepText);
+    setIsEditable(false);
   }
 
   return (
@@ -45,7 +43,7 @@ function Step({ step, recipeID, stepNum }) {
           <i className="bi bi-pencil-square" />
         </Button>
         <div className="d-grid gap-2">
-          <Button hidden={!isEditable} variant="success" onClick={saveStep}>
+          <Button hidden={!isEditable} variant="success" onClick={saveStepEdit}>
             <i className="bi bi-check-circle" />
           </Button>
           <Button

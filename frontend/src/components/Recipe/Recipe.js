@@ -10,45 +10,27 @@ import './Recipe.css';
 
 function Recipe() {
   const [recipeName, setRecipeName] = useState('');
-  const [steps, setSteps] = useState([]);
   const [ingredients, setIngredients] = useState([]);
+  const [json, setJson] = useState(null);
 
   let { recipeID } = useParams();
 
   useEffect(() => {
     let ignore = false;
-    var json = null;
 
     axios
       .get(`/api/recipes/${recipeID}`)
       .then((res) => {
         if (!ignore) {
-          json = res.data;
+          setJson(res.data);
         }
 
-        if (json == null) {
-          return;
-        }
-
-        console.log(json);
-        setRecipeName(json.name);
-
-        const intermediateIngredients = [];
-        const intermediateSteps = [];
-        json.ingredients.forEach((ingredient) => {
-          var ingredientJSON = require(`../../../../backend/data/ingredients/${ingredient.id}.json`);
-          intermediateIngredients.push(ingredientJSON);
+        setRecipeName(res.data.name);
+        var ingredientPromises = [];
+        res.data.ingredients.forEach((ingredient) => {
+          ingredientPromises.push(getIngredient(ingredient.id));
+          waitForAndSetIngredients(ingredientPromises);
         });
-
-        json.steps.forEach((step) => {
-          intermediateSteps.push(step);
-        });
-
-        console.log('setting intermediate stuff');
-        console.log(intermediateIngredients);
-        console.log(intermediateSteps);
-        setIngredients(() => intermediateIngredients);
-        setSteps(() => intermediateSteps);
       })
       .catch((err) => {
         console.error(err);
@@ -59,11 +41,44 @@ function Recipe() {
     };
   }, [recipeID]);
 
+  async function waitForAndSetIngredients(ingredientsPromises) {
+    var ingredients = await Promise.all(ingredientsPromises);
+    setIngredients(() => ingredients);
+  }
+
+  async function getIngredient(ingredientID) {
+    const ingredientResponse = await axios.get(
+      `/api/ingredients/${ingredientID}`
+    );
+
+    return ingredientResponse.data;
+  }
+
+  function saveStep(recipeID, stepNum, stepText) {
+    console.log(json);
+    var step = json.steps[stepNum];
+    step.text = stepText;
+
+    setJson((json) => ({ ...json, ...step }));
+
+    axios
+      .post(`/api/recipes/${recipeID}`, json)
+      .then((res) => {
+        console.log(res.data);
+        setJson(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+
   if (recipeName === '') {
     return <>Recipe: Not Found</>;
   }
 
-  return (
+  return json == null || json.steps == null ? (
+    <></>
+  ) : (
     <>
       <div className="recipe">Recipe: {recipeName}</div>
       <div className="ingredients">
@@ -74,9 +89,15 @@ function Recipe() {
       </div>
       <div className="steps">
         Steps:
-        {steps.map((step, i) => {
+        {json.steps.map((step, i) => {
           return (
-            <Step key={step.id} step={step} recipeID={recipeID} stepNum={i} />
+            <Step
+              key={step.id}
+              step={step}
+              recipeID={recipeID}
+              stepNum={i}
+              saveStep={saveStep}
+            />
           );
         })}
       </div>

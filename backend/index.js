@@ -23,15 +23,31 @@ app.use((req, res, next) => {
 });
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 
+app.use(express.json());
+
 app.get('/api/recipes/:id', (req, res) => {
   const id = req.params.id;
-  console.log('called with ' + id);
+  console.log(id);
   var json = fs.readFileSync(`./data/recipes/${id}.json`);
 
+  console.log(json);
   res.send(json);
 });
 
-app.get('/api/ingredients/:id', () => {});
+app.post('/api/recipes/:id', (req, res) => {
+  const id = req.params.id;
+  const json = req.body;
+  fs.writeFileSync(`./data/recipes/${id}.json`, JSON.stringify(json));
+
+  res.status(201).send(json);
+});
+
+app.get('/api/ingredients/:id', (req, res) => {
+  const id = req.params.id;
+  var json = fs.readFileSync(`./data/ingredients/${id}.json`);
+
+  res.send(json);
+});
 
 app.get('/api/recipes/:recipeID/steps/:stepID', () => {});
 
