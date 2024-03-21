@@ -5,6 +5,7 @@ const path = require('path');
 const app = express();
 
 const fs = require('fs');
+const fsp = require('fs/promises');
 
 // This code makes sure that any request that does not matches a static file
 // in the build folder, will just serve index.html. Client side routing is
@@ -25,12 +26,29 @@ app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 app.use(express.json());
 
+app.get('/api/recipes', (req, res) => {
+  console.log('getting all recipes');
+  var recipes = fs.readdirSync('./data/recipes');
+  var recipePromises = [];
+  recipes.forEach((recipe) => {
+    console.log(recipe);
+    recipePromises.push(
+      fsp.readFile(`./data/recipes/${recipe}`, {
+        encoding: 'utf8',
+      })
+    );
+  });
+
+  Promise.all(recipePromises).then((recipes) => {
+    res.send(recipes);
+  });
+});
+
 app.get('/api/recipes/:id', (req, res) => {
+  console.log('getting recipe');
   const id = req.params.id;
-  console.log(id);
   var json = fs.readFileSync(`./data/recipes/${id}.json`);
 
-  console.log(json);
   res.send(json);
 });
 
