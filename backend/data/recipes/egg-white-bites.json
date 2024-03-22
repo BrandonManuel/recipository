@@ -1,1 +1,85 @@
-{"id":"dcf214b6-4c94-4adb-9d83-f3fafabfee2d","name":"Egg White Bites","ingredients":[{"id":"1a30fe4c-5cf7-42a5-aad8-2b0400243e0b","unit":"Count","number":1},{"id":"02d2b05c-6358-4751-b64f-9d8fa53d5eb4","unit":"Carton (sm)","number":1},{"id":"5ff0fd30-a9b2-4b31-af6c-98fcf957b06f","unit":"Handful","number":1},{"id":"138d66c0-5070-427c-981d-665720560439","unit":"Cups","number":0.5},{"id":"b614d620-9faa-4056-aa16-7ee765cdde71","unit":"Cups","number":0.5},{"id":"4cd7204b-8c92-4549-b7ab-70e27a1fd160","unit":"Cups","number":{"min":0.25,"max":0.5}},{"id":"67bcb422-f760-477d-a8a9-cf7b4a884cad","unit":"Pinch","number":1},{"id":"581841c0-1ad8-4552-be32-392e53f9cba2","unit":"Pinch","number":1}],"steps":[{"id":"667db1df-e641-44f0-bfa1-a9a1e58e1bf9","text":"Preheat oven to 350°; spray muffin tin with cooking spray"},{"id":"6fea55c8-893b-4d88-b286-c71bf75000fc","text":"Slice red pepper in half and raost in toaster oven (settings: bake ~400°)."},{"id":"f81c7951-7585-4894-9de0-e8b2c47d23b4","text":"Combine egg whites, cheese, salt, and pepper to aste in blender pulse until smooth."},{"id":"4ee141b5-5088-4138-8da7-c0c501833c4f","text":"Chop a handful of spinach up finely."},{"id":"52284786-9534-4dc3-aa74-74f4fafdbb8a","text":"Dice roasted red pepper and combine in bowl with chopped spinach and a few grinds of salt and pepper."},{"id":"d2082245-2d77-4761-ae69-48d291db7a59","text":"Start boiling water."},{"id":"88b4b36b-e424-4309-bad4-ecd5d1254cc4","text":"Pour small amount of egg mix into bottom of each muffin cup. Distribute the spinach and pepper mix into muffin tin then top off all with remaining egg mixtures (cups should be basically full)."},{"id":"6bc60e91-5235-436a-8e37-04651bad907a","text":"Set muffin tin on sheet pan and fill sheetpan with a kettle full of boiling water."},{"id":"359b7457-4d4a-4756-97d4-03ffb90e45ed","text":"Cook ~30 minutes and allow to cool ~5 minutes in muffin tin before turning them out to cool on racks."}]}
+{
+  "id": "dcf214b6-4c94-4adb-9d83-f3fafabfee2d",
+  "path": "egg-white-bites",
+  "name": "Egg White Bites",
+  "ingredients": [
+    {
+      "id": "1a30fe4c-5cf7-42a5-aad8-2b0400243e0b",
+      "unit": "Count",
+      "number": 1
+    },
+    {
+      "id": "02d2b05c-6358-4751-b64f-9d8fa53d5eb4",
+      "unit": "Carton (sm)",
+      "number": 1
+    },
+    {
+      "id": "5ff0fd30-a9b2-4b31-af6c-98fcf957b06f",
+      "unit": "Handful",
+      "number": 1
+    },
+    {
+      "id": "138d66c0-5070-427c-981d-665720560439",
+      "unit": "Cups",
+      "number": 0.5
+    },
+    {
+      "id": "b614d620-9faa-4056-aa16-7ee765cdde71",
+      "unit": "Cups",
+      "number": 0.5
+    },
+    {
+      "id": "4cd7204b-8c92-4549-b7ab-70e27a1fd160",
+      "unit": "Cups",
+      "number": { "min": 0.25, "max": 0.5 }
+    },
+    {
+      "id": "67bcb422-f760-477d-a8a9-cf7b4a884cad",
+      "unit": "Pinch",
+      "number": 1
+    },
+    {
+      "id": "581841c0-1ad8-4552-be32-392e53f9cba2",
+      "unit": "Pinch",
+      "number": 1
+    }
+  ],
+  "steps": [
+    {
+      "id": "667db1df-e641-44f0-bfa1-a9a1e58e1bf9",
+      "text": "Preheat oven to 350°; spray muffin tin with cooking spray"
+    },
+    {
+      "id": "6fea55c8-893b-4d88-b286-c71bf75000fc",
+      "text": "Slice red pepper in half and raost in toaster oven (settings: bake ~400°)."
+    },
+    {
+      "id": "f81c7951-7585-4894-9de0-e8b2c47d23b4",
+      "text": "Combine egg whites, cheese, salt, and pepper to aste in blender pulse until smooth."
+    },
+    {
+      "id": "4ee141b5-5088-4138-8da7-c0c501833c4f",
+      "text": "Chop a handful of spinach up finely."
+    },
+    {
+      "id": "52284786-9534-4dc3-aa74-74f4fafdbb8a",
+      "text": "Dice roasted red pepper and combine in bowl with chopped spinach and a few grinds of salt and pepper."
+    },
+    {
+      "id": "d2082245-2d77-4761-ae69-48d291db7a59",
+      "text": "Start boiling water."
+    },
+    {
+      "id": "88b4b36b-e424-4309-bad4-ecd5d1254cc4",
+      "text": "Pour small amount of egg mix into bottom of each muffin cup. Distribute the spinach and pepper mix into muffin tin then top off all with remaining egg mixtures (cups should be basically full)."
+    },
+    {
+      "id": "6bc60e91-5235-436a-8e37-04651bad907a",
+      "text": "Set muffin tin on sheet pan and fill sheetpan with a kettle full of boiling water."
+    },
+    {
+      "id": "359b7457-4d4a-4756-97d4-03ffb90e45ed",
+      "text": "Cook ~30 minutes and allow to cool ~5 minutes in muffin tin before turning them out to cool on racks."
+    }
+  ]
+}

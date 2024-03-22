@@ -27,11 +27,9 @@ app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.use(express.json());
 
 app.get('/api/recipes', (req, res) => {
-  console.log('getting all recipes');
   var recipes = fs.readdirSync('./data/recipes');
   var recipePromises = [];
   recipes.forEach((recipe) => {
-    console.log(recipe);
     recipePromises.push(
       fsp.readFile(`./data/recipes/${recipe}`, {
         encoding: 'utf8',
@@ -45,7 +43,6 @@ app.get('/api/recipes', (req, res) => {
 });
 
 app.get('/api/recipes/:id', (req, res) => {
-  console.log('getting recipe');
   const id = req.params.id;
   var json = fs.readFileSync(`./data/recipes/${id}.json`);
 

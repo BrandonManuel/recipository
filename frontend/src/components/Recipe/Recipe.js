@@ -43,6 +43,7 @@ function Recipe() {
 
   async function getRecipe(recipeID) {
     setIsLoading(true);
+    console.log('sending ' + recipeID);
     return axios
       .get(`/api/recipes/${recipeID}`)
       .then((res) => {
